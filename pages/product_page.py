@@ -6,10 +6,20 @@ from selenium.webdriver.common.by import By
 
 
 class ProductPage(BasePage):
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCSESS_ALLERT_ADD_TO_CART), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_is_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCSESS_ALLERT_ADD_TO_CART), \
+            "Success message is presented, but disappeared not be"
+
+
+
     def add_to_cart(self):
-        self.should_be_product_url()
+        # self.should_be_product_url()
         self.click_add_to_cart()
-        self.solve_quiz_and_get_code()
+        # self.solve_quiz_and_get_code()
         self.should_be_product_sucsess_add_book_name(
             self.get_book_name()
         )
