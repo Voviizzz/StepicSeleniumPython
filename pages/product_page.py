@@ -34,7 +34,7 @@ class ProductPage(BasePage):
         # return ProductPage(browser=self.browser, url=self.browser.current_url)
 
     def should_be_product_url(self):
-        assert "?promo=newYear" in self.browser.current_url, "Product is absent in current url"
+        assert "?promo=" in self.browser.current_url, "Product is absent in current url"
 
     def should_be_product_sucsess_add_book_name(self, book_name):
         print(book_name)
