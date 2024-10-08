@@ -22,3 +22,10 @@ class LoginPage(BasePage):
                 and self.is_element_present(*LoginPageLocators.REGISTRATION_USER_REPASSWORD)
                     and self.is_element_present(*LoginPageLocators.REGISTRATION_USER_PASSWORD)
                          ), "Registration form is not presented"
+
+    def  register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_USER_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_USER_PASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_USER_REPASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON_SBMT).click()
+
