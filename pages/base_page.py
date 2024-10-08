@@ -1,6 +1,9 @@
 import math
 import time
 from asyncio import timeout
+from fileinput import lineno
+
+from .locators import BasePageLocators
 
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 from telnetlib import EC
@@ -67,3 +70,14 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        link.click()
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def go_to_cart_page(self):
+        link = self.browser.find_element(*BasePageLocators.CART_LINK)
+        link.click()
