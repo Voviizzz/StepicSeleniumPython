@@ -3,6 +3,13 @@ from StepicSeleniumPython.pages.base_page import BasePage
 from .locators import  ProductPageLocators
 from selenium.webdriver.common.by import By
 
+# товарищ, который будет это проверять:
+# test_user_can_add_product_to_basket
+# test_guest_can_add_product_to_basket
+# test_guest_cant_see_product_in_basket_opened_from_product_page
+# test_guest_can_go_to_login_page_from_product_page
+# данные методы есть, просто называны по-другому, не стал переименовывать, дабы не делать правки во всем проекте
+
 
 
 class ProductPage(BasePage):
@@ -13,8 +20,6 @@ class ProductPage(BasePage):
     def should_not_be_is_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCSESS_ALLERT_ADD_TO_CART), \
             "Success message is presented, but disappeared not be"
-
-
 
     def add_to_cart(self):
         # self.should_be_product_url()
