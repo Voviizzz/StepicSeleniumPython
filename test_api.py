@@ -115,23 +115,23 @@ import json
 # ________________________________________________________________________
 
 # PUT запрос
-def test_update_post():
-    headers = {
-        'Content-type': 'application/json; charset = UTF-8'
-    }
-    body = json.dumps({
-        'title': 'Vladimir',
-        "body": 'bar',
-        "userId": 1
-    })
-    response = requests.put('https://jsonplaceholder.typicode.com/posts/21',
-                             data=body, headers=headers)
-    print(response.json())
-# если нужно обновить какие-то поля, то используем PATCH
-# _______________________________________________________________
-
-#  DELETE запрос
-def test_delete_post():
-    response = requests.delete('https://jsonplaceholder.typicode.com/posts/21')
-    print(response.text)
-    print(response.status_code)
+# def test_update_post():
+#     headers = {
+#         'Content-type': 'application/json; charset = UTF-8'
+#     }
+#     body = json.dumps({
+#         'title': 'Vladimir',
+#         "body": 'bar',
+#         "userId": 1
+#     })
+#     response = requests.put('https://jsonplaceholder.typicode.com/posts/21',
+#                              data=body, headers=headers)
+#     print(response.json())
+# # если нужно обновить какие-то поля, то используем PATCH
+# # _______________________________________________________________
+#
+# #  DELETE запрос
+# def test_delete_post():
+#     response = requests.delete('https://jsonplaceholder.typicode.com/posts/21')
+#     print(response.text)
+#     print(response.status_code)
