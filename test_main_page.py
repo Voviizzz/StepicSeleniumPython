@@ -1,9 +1,6 @@
 import pytest
-
-from .pages.login_page import LoginPage
 from .pages.main_page import MainPage
 from .pages.basket_page import BasketPage
-from selenium.webdriver.common.by import By
 link = "https://selenium1py.pythonanywhere.com/ru/accounts/login/"
 
 

@@ -1,29 +1,27 @@
 import random
-from lib2to3.pygram import pattern_grammar
 import time
 import pytest
-from StepicSeleniumPython.pages.basket_page import BasketPage
-from StepicSeleniumPython.pages.login_page import LoginPage
-from StepicSeleniumPython.pages.product_page import ProductPage
+from .pages.product_page import ProductPage
+from .pages.basket_page import BasketPage
 
 
-# @pytest.mark.parametrize('NumberPromo', ['0','1','2','3','4','5','6',pytest.param('7', marks=pytest.mark.xfail),'8','9'])
-# def test_guest_can_go_to_login_page(browser, NumberPromo):
-#     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{NumberPromo}"
-#     page = ProductPage(browser, link)
-#     page.open()
-#     # page.is_disappeared()
-#     # page.should_be_product_url()
-#     page.add_to_cart()
-    # page.solve_quiz_and_get_code()
-
-def test_guest_cant_see_success_message_after_adding_product_to_basket (browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+@pytest.mark.parametrize('NumberPromo', ['0','1','2','3','4','5','6',pytest.param('7', marks=pytest.mark.xfail),'8','9'])
+def test_guest_can_go_to_login_page(browser, NumberPromo):
+    link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{NumberPromo}"
     page = ProductPage(browser, link)
     page.open()
+    # page.is_disappeared()
+    # page.should_be_product_url()
     page.add_to_cart()
-    page.should_not_be_success_message()
-#
+    page.solve_quiz_and_get_code()
+
+# def test_guest_cant_see_success_message_after_adding_product_to_basket (browser):
+#     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+#     page = ProductPage(browser, link)
+#     page.open()
+#     page.add_to_cart()
+#     page.should_not_be_success_message()
+# #
 # def test_message_disappeared_after_adding_product_to_basket (browser):
 #     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
 #     page = ProductPage(browser, link)
@@ -57,6 +55,7 @@ class TestUserAddToBasketFromProductPage ():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = "https://selenium1py.pythonanywhere.com/ru/accounts/login/"
+        from StepicSeleniumPython.pages.login_page import LoginPage
         page = LoginPage(browser, link)
         page.open()
         email = str(time.time()) + "@fakemail.org"

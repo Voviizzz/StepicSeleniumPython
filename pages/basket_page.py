@@ -1,7 +1,7 @@
-from .base_page import BasePage
-from .locators import BasePageLocators
-from selenium.webdriver.common.by import By
-from .product_page import ProductPage
+from StepicSeleniumPython.pages.base_page import *
+from StepicSeleniumPython.pages.locators import *
+# from selenium.webdriver.common.by import By
+# from StepicSeleniumPython.pages.product_page import ProductPage
 
 
 class BasketPage(BasePage):

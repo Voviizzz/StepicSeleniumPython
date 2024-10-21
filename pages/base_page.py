@@ -1,12 +1,8 @@
 import math
-import time
-from asyncio import timeout
-from fileinput import lineno
-
 from .locators import BasePageLocators
 
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
-from telnetlib import EC
+# from telnetlib import EC
 
 
 from selenium.common.exceptions import NoSuchElementException, TimeoutException

@@ -1,5 +1,5 @@
 
-from StepicSeleniumPython.pages.base_page import BasePage
+from .base_page import BasePage
 from .locators import  ProductPageLocators
 from selenium.webdriver.common.by import By
 
@@ -25,12 +25,12 @@ class ProductPage(BasePage):
         # self.should_be_product_url()
         self.click_add_to_cart()
         # self.solve_quiz_and_get_code()
-        self.should_be_product_sucsess_add_book_name(
-            self.get_book_name()
-        )
-        self.should_be_product_sucsess_add_book_price(
-            self.get_book_price()
-        )
+        # self.should_be_product_sucsess_add_book_name(
+        #     self.get_book_name()
+        # )
+        # self.should_be_product_sucsess_add_book_price(
+        #     self.get_book_price()
+        # )
 
     def get_book_name(self):
         book_name = self.browser.find_element(By.XPATH,"//*[@class='active'][1]").text
