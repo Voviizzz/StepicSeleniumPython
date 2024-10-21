@@ -1,4 +1,4 @@
-# Данный проект был сделан по курсу [на](https://stepik.org/course/575/syllabus)
+# Данный проект был сделан по [данному курсу](https://stepik.org/course/575/syllabus)
 
 ## Запуск отчетов ALLURE
 
