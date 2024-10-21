@@ -4,3 +4,4 @@
 
 1) pytest -v -s --alluredir results;
 2) allure serve results
+3) Генерация файлов с отчетами: allure generate results
